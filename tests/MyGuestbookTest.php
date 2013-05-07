@@ -1,32 +1,10 @@
 <?php
 
 require_once "../src/Guestbook.php";
-require_once "PHPUnit/Extensions/Database/TestCase.php";
-
-class GuestbookTest extends PHPUnit_Extensions_Database_TestCase
+require_once dirname(__FILE__) . "/DbTestCase.php";
+class GuestbookTest extends DbTestCase
 {
-    // only instantiate pdo once for test clean-up/fixture load
-    static private $pdo = null;
-
-    // only instantiate PHPUnit_Extensions_Database_DB_IDatabaseConnection once per test
-    private $conn = null;
-
-    final public function getConnection()
-    {
-        if ($this->conn === null) {
-            if (self::$pdo == null) {
-                self::$pdo = new PDO( $GLOBALS['DB_DSN'], $GLOBALS['DB_USER'], $GLOBALS['DB_PASSWD'] );
-            }
-            $this->conn = $this->createDefaultDBConnection(self::$pdo, $GLOBALS['DB_DBNAME']);
-        }
-
-        return $this->conn;
-    }
-
-    public function getDataSet()
-    {
-        return $this->createFlatXmlDataSet('fixtures/guestbook.xml');
-    }
+    protected $dataset = 'fixtures/guestbook.xml';
 
     public function testAddEntry()
     {
@@ -38,6 +16,4 @@ class GuestbookTest extends PHPUnit_Extensions_Database_TestCase
 
         $this->assertEquals(3, $this->getConnection()->getRowCount('guestbook'), "Inserting failed");
     }
-
-
 }
