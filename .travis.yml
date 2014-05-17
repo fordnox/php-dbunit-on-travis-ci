@@ -10,9 +10,12 @@ before_script:
   - mysql myguestbook < src/myguestbook.sql
   - pyrus set auto_discover 1
   - pyrus install --force phpunit/DbUnit
+  - pyrus install pear/PHP_CodeSniffer
+  - phpenv rehash
   - cd tests
 
 script:
+  - phpcs .
   - phpunit .
 
 notifications:
