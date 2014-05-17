@@ -1,6 +1,9 @@
 <?php
+namespace Fordnox\Test;
 
-class GuestbookTest extends DbTestCase
+use Fordnox\Guestbook;
+
+class GuestbookTest extends \DbTestCase
 {
     protected $dataset = 'fixtures/guestbook.xml';
 

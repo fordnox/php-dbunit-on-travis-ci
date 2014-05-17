@@ -1,10 +1,15 @@
 <?php
 
+namespace Fordnox;
+
+/**
+ * Class Guestbook
+ */
 class Guestbook
 {
     private $pdo;
 
-    public function setPdo(PDO $pdo)
+    public function setPdo(\PDO $pdo)
     {
         $this->pdo = $pdo;
     }

@@ -14,7 +14,7 @@
 
     <testsuites>
         <testsuite name="Fordnox Test Suite">
-            <directory>./tests/</directory>
+            <directory>./tests/Fordnox/</directory>
         </testsuite>
     </testsuites>
 
