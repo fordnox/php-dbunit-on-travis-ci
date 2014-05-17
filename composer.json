@@ -3,7 +3,7 @@
     "description": "Sample PHPUnit and DbUnit php application",
     "keywords": ["testing", "tdd", "dbunit", "phpunit"],
     "homepage": "https://github.com/fordnox/php-dbunit-on-travis-ci",
-    "type": "library",
+    "type": "project",
     "license": "GPL",
     "authors": [
         {
