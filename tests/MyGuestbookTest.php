@@ -1,7 +1,5 @@
 <?php
 
-require_once "../src/Guestbook.php";
-require_once dirname(__FILE__) . "/DbTestCase.php";
 class GuestbookTest extends DbTestCase
 {
     protected $dataset = 'fixtures/guestbook.xml';

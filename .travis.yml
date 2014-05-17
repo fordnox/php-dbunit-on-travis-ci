@@ -8,11 +8,7 @@ php:
 before_script:
   - mysql -e 'create database IF NOT EXISTS myguestbook'
   - mysql myguestbook < src/myguestbook.sql
-  - pyrus set auto_discover 1
-  - pyrus install --force phpunit/DbUnit
-  - pyrus install pear/PHP_CodeSniffer
-  - phpenv rehash
-  - cd tests
+  - composer install --prefer-source --dev
 
 script:
   - phpcs .

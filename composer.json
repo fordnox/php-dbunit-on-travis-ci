@@ -1,0 +1,24 @@
+{
+    "name": "fordnox/php-dbunit-on-travis-ci",
+    "description": "Sample PHPUnit and DbUnit php application",
+    "keywords": ["testing", "tdd", "dbunit", "phpunit"],
+    "homepage": "https://github.com/fordnox/php-dbunit-on-travis-ci",
+    "type": "library",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Andrius Putna",
+            "email": "fordnox@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.1.*",
+        "phpunit/dbunit": ">=1.2"
+    },
+    "autoload": {
+        "psr-0": { "": "src/" }
+    }
+}

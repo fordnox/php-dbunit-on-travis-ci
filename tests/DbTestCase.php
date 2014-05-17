@@ -1,6 +1,5 @@
 <?php
 
-require_once "PHPUnit/Extensions/Database/TestCase.php";
 abstract class DbTestCase extends PHPUnit_Extensions_Database_TestCase
 {
     // only instantiate pdo once for test clean-up/fixture load
@@ -25,6 +24,7 @@ abstract class DbTestCase extends PHPUnit_Extensions_Database_TestCase
 
     public function getDataSet()
     {
-        return $this->createFlatXmlDataSet($this->dataset);
+        $path = dirname(__FILE__) . DIRECTORY_SEPARATOR . $this->dataset;
+        return $this->createFlatXmlDataSet($path);
     }
 }
