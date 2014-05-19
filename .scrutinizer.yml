@@ -1,6 +1,9 @@
 tools:
     external_code_coverage:
         timeout: 3600
+    php_pdepend: true
+    php_cpd: true
+    php_analyzer: true
     php_code_sniffer:
         enabled: true
         config:
