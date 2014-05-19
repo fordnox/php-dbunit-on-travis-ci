@@ -1,6 +1,7 @@
 <?php
+namespace Fordnox\Test;
 
-abstract class DbTestCase extends PHPUnit_Extensions_Database_TestCase
+abstract class DbTestCase extends \PHPUnit_Extensions_Database_TestCase
 {
     // only instantiate pdo once for test clean-up/fixture load
     static protected $pdo = null;
@@ -14,7 +15,7 @@ abstract class DbTestCase extends PHPUnit_Extensions_Database_TestCase
     {
         if ($this->conn === null) {
             if (self::$pdo == null) {
-                self::$pdo = new PDO( $GLOBALS['DB_DSN'], $GLOBALS['DB_USER'], $GLOBALS['DB_PASSWD'] );
+                self::$pdo = new \PDO( $GLOBALS['DB_DSN'], $GLOBALS['DB_USER'], $GLOBALS['DB_PASSWD'] );
             }
             $this->conn = $this->createDefaultDBConnection(self::$pdo, $GLOBALS['DB_DBNAME']);
         }
@@ -24,7 +25,7 @@ abstract class DbTestCase extends PHPUnit_Extensions_Database_TestCase
 
     public function getDataSet()
     {
-        $path = dirname(__FILE__) . DIRECTORY_SEPARATOR . $this->dataset;
+        $path = dirname(__FILE__) .'/../../' . $this->dataset;
         return $this->createFlatXmlDataSet($path);
     }
 }

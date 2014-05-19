@@ -1,9 +1,7 @@
 <?php
 namespace Fordnox\Test;
 
-use Fordnox\Guestbook;
-
-class GuestbookTest extends \DbTestCase
+class GuestbookTest extends DbTestCase
 {
     protected $dataset = 'fixtures/guestbook.xml';
 
@@ -11,7 +9,7 @@ class GuestbookTest extends \DbTestCase
     {
         $this->assertEquals(2, $this->getConnection()->getRowCount('guestbook'), "Pre-Condition");
 
-        $guestbook = new Guestbook();
+        $guestbook = new \Fordnox\Guestbook();
         $guestbook->setPdo(self::$pdo);
         $guestbook->addEntry("suzy", "Hello world!");
 

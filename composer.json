@@ -20,5 +20,8 @@
     },
     "autoload": {
         "psr-4": { "Fordnox\\": "lib/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Fordnox\\Test\\": "tests/Fordnox/Test/" }
     }
 }
