@@ -1,6 +1,6 @@
 tools:
   external_code_coverage: true
-      timeout: 3600 # Timeout in seconds.
+    timeout: 3600
   php_code_sniffer:
     enabled: true
     config:
