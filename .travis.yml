@@ -18,7 +18,6 @@ before_script:
   - mysql myguestbook < myguestbook.sql
 
 script:
-  - ./vendor/bin/phpcs lib --standard=PSR2
   - ./vendor/bin/phpunit
 
 after_script:
